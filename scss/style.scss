@@ -6,15 +6,7 @@
 }
 
 body {
-  // height:100vh;
-  // background: rgb(35, 28, 154);
-  // background: linear-gradient(
-  //   0deg,
-  //   rgba(35, 28, 154, 1) 0%,
-  //   rgba(33, 33, 194, 1) 17%,
-  //   rgba(0, 212, 255, 1) 100%
-  // );
-  // background-image: url(../../img/weather/As-Above-So-Below-2560x1600.jpg)
+
 }
 
 .bgVideo {
@@ -134,8 +126,13 @@ body {
 }
 .temperature__number {
   font-size: 56px;
-  padding: 0rem 0rem 4rem 0rem;
+  padding: 0rem 0rem 1rem 0rem;
 }
+.feels_like{
+  font-size: 15px;
+  padding: 0rem 0rem 2rem 0rem;
+}
+
 .condition {
   font-size: 20px;
 }

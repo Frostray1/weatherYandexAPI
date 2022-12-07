@@ -38,6 +38,7 @@ window.addEventListener("load", () => {
   let timeDescription = document.querySelector(".time");
   let temperatureDegree = document.querySelector(".temperature__number");
   let location = document.querySelector(".location__sity");
+  let feels = document.querySelector(".feels_like");
   getTime(timeDescription);
 
   if (navigator.geolocation) {
@@ -57,13 +58,13 @@ window.addEventListener("load", () => {
         })
         .then((data) => {
           console.log(data);
-          const { temp, condition, icon } = data.fact;
+          const { temp, condition, icon, feels_like } = data.fact;
           const { name } = data.geo_object.locality;
           changeBackground(condition)
           changeIconWeather(icon);
           weatherStatusTranslation(condition);
           
-         
+          feels.textContent = `Ощущается как: ${feels_like}°`
           temperatureDegree.textContent = temp;
           location.textContent = name;
         
