@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 body {
@@ -17,11 +17,68 @@ body {
   // background-image: url(../../img/weather/As-Above-So-Below-2560x1600.jpg)
 }
 
-.bgVideo{
+.bgVideo {
   position: relative;
   z-index: -9999;
 }
+.preloader__window {
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: 100%;
+  h3{
+    text-align: center;
+    font-size: 24px;
+  }
+}
 
+.preloader-remove {
+  display: none;
+}
+
+.preloader-5 {
+  display: block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 20% auto;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #337ab7;
+  animation: preloader-5-spin 2s linear infinite;
+}
+.preloader-5:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #bfe2ff;
+  animation: preloader-5-spin 3s linear infinite;
+}
+.preloader-5:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #337ab7;
+  animation: preloader-5-spin 1.5s linear infinite;
+}
+@keyframes preloader-5-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .weather {
   position: absolute;
@@ -29,15 +86,13 @@ body {
   box-shadow: 6px 6px 17px 7px rgba(12, 55, 88, 0.2);
   color: white;
   text-align: center;
-  background:rgb(4, 201, 255, 0.5);
+  background: rgb(4, 201, 255, 0.5);
   border-radius: 20px;
-  
 
-  
   width: 60%;
   height: 480px;
-  top:15%;
-  left:21.1%
+  top: 15%;
+  left: 21.1%;
 }
 
 .time {
@@ -56,35 +111,31 @@ body {
 .location__sity {
   // white-space:nowrap;
   padding: 0rem 0rem 0rem 10rem;
-    // padding-right: 10rem;
+  // padding-right: 10rem;
 }
 .icon {
   width: 100%;
   padding: 0rem 10rem 0rem 0rem;
-  img{
+  img {
     width: 190px;
     height: 190px;
     float: right;
-    opacity: .6;
-    
-
-   
+    opacity: 0.6;
   }
-    
 }
-.temperature{
+.temperature {
   display: flex;
-  text-align:center;
+  text-align: center;
   width: 100%;
   margin-left: 46%;
 }
-.temperature__icon{
+.temperature__icon {
   font-size: 45px;
 }
 .temperature__number {
   font-size: 56px;
   padding: 0rem 0rem 4rem 0rem;
 }
-.condition{
+.condition {
   font-size: 20px;
 }
