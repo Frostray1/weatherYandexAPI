@@ -14,22 +14,26 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="weather" id = 'weather'>
-      <div class="time"></div>
-      <div class="location">
-        <div class="location__sity"></div>
-        <div class="icon">
-          <img
-            class="weatherIcons"
-            id="weatherIcons"
-            src=""
-            alt=""
-          />
+    <div class="bgVideo">
+      <div class="weather" id = 'weather'>
+        <div class="time"></div>
+        <div class="location">
+          <div class="location__sity"></div>
+          <div class="icon">
+            <img
+              class="weatherIcons"
+              id="weatherIcons"
+              src=""
+              alt=""
+            />
+          </div>
         </div>
+        <div class="temperature"></div>
+        <div class="condition" id="condition"></div>
       </div>
-      <div class="temperature"></div>
-      <div class="condition" id="condition"></div>
-    </div>
+      <video class="bgVideo__media" id='bgVideo__media'type="video" src="" autoplay muted loop ></video>
+    
+    
     <!-- <div class="about">Development and design <br> Artem Bychkov</div> -->
     <div class="about__icons">
       <a href=""><img src="" alt="" /></a>
@@ -37,6 +41,7 @@
       <a href=""><img src="" alt="" /></a>
       <a href=""><img src="" alt="" /></a>
     </div>
+  </div>
     <script type="module" src="/js/weatherScript.js"></script>
     <script type="module" src="/js/changeIconWeatherScript.js"></script>
     <script type="module" src="/js/changeConditionScript.js"></script>

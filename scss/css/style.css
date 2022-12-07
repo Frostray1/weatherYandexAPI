@@ -5,13 +5,14 @@
   font-family: "Mulish", sans-serif;
 }
 
-body {
-  height: 100vh;
-  background: rgb(35, 28, 154);
-  background: linear-gradient(0deg, rgb(35, 28, 154) 0%, rgb(33, 33, 194) 17%, rgb(0, 212, 255) 100%);
+.bgVideo {
+  position: relative;
+  z-index: -9999;
 }
 
 .weather {
+  position: absolute;
+  z-index: 1;
   box-shadow: 6px 6px 17px 7px rgba(12, 55, 88, 0.2);
   background: linear-gradient(0deg, rgb(35, 28, 154) 0%, rgb(33, 33, 194) 17%, rgb(16, 211, 250) 100%);
   color: white;
@@ -20,8 +21,8 @@ body {
   border-radius: 20px;
   width: 60%;
   height: 480px;
-  margin: 0vh auto;
-  margin-top: 20vh;
+  top: 25%;
+  left: 22.1%;
 }
 
 .time {
