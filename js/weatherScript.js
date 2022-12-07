@@ -11,13 +11,12 @@ function getTime(timeDescription) {
 }
 
 
-
-
+changeBackground('overcast')
 window.addEventListener("load", () => {
   let longitude; // долгота
   let latitude; // широта
   let timeDescription = document.querySelector(".time");
-  let temperatureDegree = document.querySelector(".temperature");
+  let temperatureDegree = document.querySelector(".temperature__number");
   let location = document.querySelector(".location__sity");
   getTime(timeDescription);
 

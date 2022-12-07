@@ -14,15 +14,14 @@
   position: absolute;
   z-index: 1;
   box-shadow: 6px 6px 17px 7px rgba(12, 55, 88, 0.2);
-  background: linear-gradient(0deg, rgb(35, 28, 154) 0%, rgb(33, 33, 194) 17%, rgb(16, 211, 250) 100%);
   color: white;
   text-align: center;
-  background: rgb(4, 201, 255);
+  background: rgba(4, 201, 255, 0.5);
   border-radius: 20px;
   width: 60%;
   height: 480px;
-  top: 25%;
-  left: 22.1%;
+  top: 15%;
+  left: 21.1%;
 }
 
 .time {
@@ -45,14 +44,26 @@
   padding: 0rem 10rem 0rem 0rem;
 }
 .icon img {
-  width: 150px;
-  height: 150px;
+  width: 190px;
+  height: 190px;
   float: right;
+  opacity: 0.6;
 }
 
 .temperature {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  margin-left: 46%;
+}
+
+.temperature__icon {
+  font-size: 45px;
+}
+
+.temperature__number {
   font-size: 56px;
-  padding: 0rem 0rem 5rem 0rem;
+  padding: 0rem 0rem 4rem 0rem;
 }
 
 .condition {
