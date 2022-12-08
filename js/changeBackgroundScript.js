@@ -1,10 +1,16 @@
 export function changeBackground (condition){
   
     const status = {
-        "overcast": "/img/weather/RooftopClouds.mp4"
+        "cloudy": "/img/video/RooftopClouds.mp4",
+        "overcast": "/img/video/RooftopClouds.mp4",
+        "overcast-and-light-snow":"/img/video/ligt-snow-day.mp4"
       }
     const color = {
-      "overcast": 'rgb(101,116,127, 0.5)'
+      
+      "cloudy": 'rgb(101,116,127, 0.5)',
+      "overcast": 'rgb(101,116,127, 0.5)',
+      "overcast-and-light-snow": 'rgb(101,116,127, 0.5)'
+    
     }
     
       document.getElementById('weather').style.backgroundColor = color[condition]

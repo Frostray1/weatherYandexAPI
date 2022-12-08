@@ -13,6 +13,7 @@ export function weatherStatusTranslation (condition){
         "showers":"ливень",
         "wet-snow":"дождь со снегом.",
         "light-snow":"небольшой снег",
+        "overcast-and-light-snow":"Облачно и небольшой снег",
         "snow":"снег",
         "snow-showers":"снегопад",
         "hail":"град",

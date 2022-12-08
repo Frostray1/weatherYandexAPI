@@ -16,7 +16,7 @@ export function changeIconWeather(icon){
     "bkn_sn_d":'/icons/animated/bkn_sn_d.svg',
     "bkn_sn_n":'/icons/bkn_sn_n.svg',
     "ovc_-ra":'/icons/animated/ovc_-ra.svg',
-    "ovc_-sn":'/icons/ovc_-sn.svg',
+    "ovc_-sn":'/icons/animated/ovc_-sn.svg',
     "ovc_+ra":'/icons/animated/ovc_+ra.svg',
     "ovc_+sn":'/icons/ovc_+sn.svg',
 
