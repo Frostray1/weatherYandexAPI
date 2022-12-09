@@ -9,6 +9,12 @@ export function changeBackground(weatherСondition) {
     "overcast": "rgb(101,116,127, 0.5)",
     "ight-snow": "rgb(101,116,127, 0.5)",
   };
-  document.getElementById("weather").style.backgroundColor = color[weatherСondition];
+
+  const backgroundAllBlocks = document.querySelectorAll("#weather , #leftBlockWeather , #downBlockWeather");
+  console.log(backgroundAllBlocks)
+  backgroundAllBlocks.forEach(blocks => {
+    blocks.style.backgroundColor = color[weatherСondition];
+   });
+
   document.getElementById("bgVideo__media").src = `${status[weatherСondition]}`;
 }
