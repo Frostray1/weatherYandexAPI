@@ -75,10 +75,6 @@ search_button.addEventListener("click", function () {
 window.addEventListener("load", () => {
   let longitude; // долгота
   let latitude; // широта
-  // let timeDescription = document.querySelector(".time");
-  // let temperatureDegree = document.querySelector(".temperature__number");
-  // let location = document.querySelector(".location__sity");
-  // let feels = document.querySelector(".feels_like");
   getTime(timeDescription);
 
   if (navigator.geolocation) {
@@ -103,7 +99,6 @@ window.addEventListener("load", () => {
           changeBackground(condition);
           changeIconWeather(icon);
           weatherStatusTranslation(condition);
-
           feels.textContent = `Ощущается как: ${feels_like}°`;
           temperatureDegree.textContent = temp;
           location.textContent = name;
