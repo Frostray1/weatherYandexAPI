@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Weather Widget</title>
   </head>
   <body>
     <div class="preloader__window">
@@ -19,8 +19,10 @@
       <h3 class="preloader__text">Завариваем чай</h3>
     </div>
     
-   
-      
+   <div class="mainContainer">
+      <div class="leftBlockWeather">
+        
+      </div>
       <div class="weather" id = 'weather'>
        <div class="timeAndSearch">
         <div class="time"></div>
@@ -41,29 +43,29 @@
             />
           </div>
         </div>
-        <div class="temperature">
-        <div class="temperature__number">-5</div>
-        <div class="temperature__icon">°</div>
-      </div>
+        <div class="temperature__number">+15°</div>
       <div class="feels_like"></div>
         <div class="condition" id="condition">Пасмурно</div>
       </div>
+    </div>
       <div class="bgVideo">
       <video class="bgVideo__media" id='bgVideo__media'type="video" src="" autoplay muted loop ></video>
     
     
-    <div class="about">Development and design <br> Artem Bychkov</div>
+    <!-- <div class="about">Development and design <br> Artem Bychkov</div>
     <div class="about__icons">
       <a href=""><img src="" alt="" /></a>
       <a href=""><img src="" alt="" /></a>
       <a href=""><img src="" alt="" /></a>
       <a href=""><img src="" alt="" /></a>
-    </div>
+    </div> -->
   </div>
   
     <script type="module" src="/js/weatherScript.js"></script>
+    <script type="module" src="/js/preloaderScript.js"></script>
     <script type="module" src="/js/changeIconWeatherScript.js"></script>
     <script type="module" src="/js/changeConditionScript.js"></script>
     <script type="module" src="/js/changeBackgroundScript.js"></script>
+    <script type="module" src="/js/searchCityScript.js"></script>
   </body>
 </html>

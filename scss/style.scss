@@ -9,6 +9,7 @@
   position: relative;
   z-index: -99999;
 }
+// preloader beginning
 .preloader__window {
   position: absolute;
   background: white;
@@ -20,11 +21,9 @@
     font-size: 24px;
   }
 }
-
 .preloader-remove {
   display: none;
 }
-
 .preloader-5 {
   display: block;
   position: relative;
@@ -68,7 +67,19 @@
     transform: rotate(360deg);
   }
 }
+// preloader end
 
+
+
+// left block weather
+
+.leftBlockWeather{
+
+}
+
+// left block weather end
+
+//main weather block
 .weather {
   position: absolute;
   z-index: 1;
@@ -87,7 +98,7 @@
   display: flex;
 }
 .time {
-  margin-left: 42%;
+  margin-left: 43%;
   padding: 2rem 0em 0rem 0em;
   font-size: 60px;
 }
@@ -114,13 +125,11 @@
   margin: 3.6em 0em 0em -2em;
   opacity: 0.6;
 }
-
 .location {
   display: flex;
   font-size: 40px;
   align-items: center;
 }
-
 .location__sity {
   padding: 0rem 0rem 0rem 10rem;
 }
@@ -133,15 +142,6 @@
     float: right;
   }
 }
-.temperature {
-  display: flex;
-  text-align: center;
-  width: 100%;
-  margin-left: 46%;
-}
-.temperature__icon {
-  font-size: 45px;
-}
 .temperature__number {
   font-size: 56px;
   padding: 0rem 0rem 1rem 0rem;
@@ -150,7 +150,7 @@
   font-size: 15px;
   padding: 0rem 0rem 2rem 0rem;
 }
-
 .condition {
   font-size: 20px;
 }
+//main weather block end 
