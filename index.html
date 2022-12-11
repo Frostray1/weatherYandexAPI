@@ -21,7 +21,18 @@
     
    <div class="mainContainer">
       <div class="leftBlockWeather" id="leftBlockWeather">
-        
+        <div class="wind__speed">
+          <img class="wind__speedIcon" src="/icons/leftBlockIcons/wind.svg" alt="">
+          <h4 class="wind__speedText">Скорость ветра 4 м/с</h4>
+        </div>
+        <div class="pressure_mm">
+          <img class="pressure_mmIcon" src="/icons/leftBlockIcons/pressure.svg" alt="">
+          <h4 class="pressure_mmText">Давление 758 мм рт. ст.</h4>
+        </div>
+        <div class="humidity">
+          <img class="humidityIcon" src="/icons/leftBlockIcons/humidity.svg" alt="">
+          <h4 class="humidityText">Влажность воздуха 86%</h4>
+        </div>
       </div>
       <div class="upDownBlocks">
       <div class="weather" id = 'weather'>
@@ -113,13 +124,7 @@
     </div>
     
     
-    <!-- <div class="about">Development and design <br> Artem Bychkov</div>
-    <div class="about__icons">
-      <a href=""><img src="" alt="" /></a>
-      <a href=""><img src="" alt="" /></a>
-      <a href=""><img src="" alt="" /></a>
-      <a href=""><img src="" alt="" /></a>
-    </div> -->
+   
   
   
     <script type="module" src="/js/weatherScript.js"></script>
@@ -128,6 +133,7 @@
     <script type="module" src="/js/changeConditionScript.js"></script>
     <script type="module" src="/js/changeBackgroundScript.js"></script>
     <script type="module" src="/js/searchCityScript.js"></script>
-    <!-- <script type="module" src="/js/weatherForecastScript.js"></script> -->
+    <script type="module" src="/js/leftBlockInformationSrcipt.js"></script>
+    <script type="module" src="/js/weatherForecastScript.js"></script>
   </body>
 </html>

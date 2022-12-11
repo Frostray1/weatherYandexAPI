@@ -5,3 +5,18 @@
     background: rgb(4, 201, 255, 0.5);
     border-radius: 20px;
   }
+
+  .wind__speed, .pressure_mm, .humidity{
+   
+    height: 33%;
+    color: white;
+    text-align: center;
+    
+    img{
+      margin:40px 0px 30px 0px;
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  

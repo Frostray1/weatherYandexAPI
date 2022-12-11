@@ -14,5 +14,5 @@ window.onload = function () {
     setTimeout(function () {
       preload.classList.add("preloader-remove");
       preload_window.classList.add("preloader-remove");
-    }, 0);
+    }, 4000);
   };

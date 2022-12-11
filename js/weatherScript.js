@@ -2,7 +2,7 @@ import { changeIconWeather} from "./changeIconWeatherScript.js";
 import { weatherStatusTranslation} from "./changeConditionScript.js";
 import { changeBackground } from "./changeBackgroundScript.js";
 import { weatherForecast, changeDateForecasts } from "./weatherForecastScript.js";
-
+import { loadInformation } from "./leftBlockInformationSrcipt.js";
 function getTime(timeDescription) {
   let dateAndTime = new Date().toLocaleString();
   let timeDesktop = dateAndTime.split(",");
@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
         })
         .then((data) => {
           console.log(data);
-          const { temp, condition, icon, feels_like } = data.fact;
+          const { temp, condition, icon, feels_like, wind_speed, pressure_mm, humidity} = data.fact;
           const { name } = data.geo_object.locality;
           changeBackground(weatherStatusTranslation(condition));
           changeIconWeather(icon);
@@ -54,6 +54,9 @@ window.addEventListener("load", () => {
           const { forecasts } = data;
           weatherForecast(forecasts);
           changeDateForecasts(forecasts);
+
+          loadInformation(wind_speed, pressure_mm, humidity);
+
           
           
         });
