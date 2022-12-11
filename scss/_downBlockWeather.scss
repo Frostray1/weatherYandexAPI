@@ -1,9 +1,39 @@
 .downBlockWeather {
   margin: 1em 1em 0em 1em;
   width: 50vw;
-  height: 26vh;
+  height: 240px;
 
   box-shadow: 6px 6px 17px 5px rgba(12, 55, 88, 0.2);
   background: rgb(4, 201, 255, 0.5);
   border-radius: 20px;
 }
+
+.weatherForecast{
+display: flex;
+li{
+  list-style:none;
+  width: 120px;
+  height: 200px;
+  margin: 20px 10px 0px 10px ;
+  text-align: center;
+  h4{
+    font-size: 14px;
+    padding: 5px 0px 10px 0px;
+  }
+  p{
+    font-size: 12px;
+  }
+  img{
+    // padding: 20px 0px 10px 0px;
+    width: 100px;
+    height: 100px;
+  }
+  h5{
+    font-size: 20px;
+  }
+  h6{
+    font-size: 14px;
+  }
+}
+}
+

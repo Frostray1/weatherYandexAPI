@@ -1,7 +1,7 @@
 import { changeIconWeather } from "./changeIconWeatherScript.js";
 import { weatherStatusTranslation } from "./changeConditionScript.js";
 import { changeBackground } from "./changeBackgroundScript.js";
-
+import { weatherForecast, changeDateForecasts } from "./weatherForecastScript.js";
 
 let temperatureDegree = document.querySelector(".temperature__number");
 let location = document.querySelector(".location__sity");
@@ -38,6 +38,9 @@ search_button.addEventListener("click", function () {
           temp <= 0 ? temperatureDegree.textContent = temp : temperatureDegree.textContent = '+'+ temp ;
           feels_like <= 0 ? feels.textContent = `Ощущается как: ${feels_like}°` : feels.textContent = `Ощущается как: +${feels_like}°`;
           location.textContent = name;
+          const { forecasts } = data;
+          weatherForecast(forecasts);
+          changeDateForecasts(forecasts);
         });
     });
 });

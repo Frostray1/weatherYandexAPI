@@ -1,6 +1,7 @@
-import { changeIconWeather } from "./changeIconWeatherScript.js";
-import { weatherStatusTranslation } from "./changeConditionScript.js";
+import { changeIconWeather} from "./changeIconWeatherScript.js";
+import { weatherStatusTranslation} from "./changeConditionScript.js";
 import { changeBackground } from "./changeBackgroundScript.js";
+import { weatherForecast, changeDateForecasts } from "./weatherForecastScript.js";
 
 function getTime(timeDescription) {
   let dateAndTime = new Date().toLocaleString();
@@ -9,6 +10,8 @@ function getTime(timeDescription) {
   timeDescription.textContent =
     timeDesktopHoursMinutes[0] + ":" + timeDesktopHoursMinutes[1];
 }
+
+
 
 
 
@@ -40,13 +43,19 @@ window.addEventListener("load", () => {
           console.log(data);
           const { temp, condition, icon, feels_like } = data.fact;
           const { name } = data.geo_object.locality;
-          let weatherСondition = weatherStatusTranslation(condition);
-          changeBackground(weatherСondition);
+          changeBackground(weatherStatusTranslation(condition));
           changeIconWeather(icon);
-          temp <= 0 ? temperatureDegree.textContent = temp : temperatureDegree.textContent = '+'+ temp ;
-          feels_like <= 0 ? feels.textContent = `Ощущается как: ${feels_like}°` : feels.textContent = `Ощущается как: +${feels_like}°`;
+          temp <= 0 ? (temperatureDegree.textContent = temp) : (temperatureDegree.textContent = "+" + temp);
+          feels_like <= 0 ? (feels.textContent = `Ощущается как: ${feels_like}°`) : (feels.textContent = `Ощущается как: +${feels_like}°`);
           temperatureDegree.textContent = temp;
           location.textContent = name;
+
+
+          const { forecasts } = data;
+          weatherForecast(forecasts);
+          changeDateForecasts(forecasts);
+          
+          
         });
     });
   } else {
