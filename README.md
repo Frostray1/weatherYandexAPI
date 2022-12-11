@@ -11,11 +11,11 @@
 <br>
 Прелоадер <br>
 ![telegram-cloud-photo-size-2-5238210155529750323-y](https://user-images.githubusercontent.com/48648751/206934570-afbfa0bb-50b8-4be3-844a-1ef2b2f7bd43.jpg)
-<br>
-Страница после загрузки (Местоположение определяется при включенной геопозиции в браузере)<br>
+<br><br>
+Страница после загрузки (Местоположение определяется при включенной геопозиции в браузере)<br><br>
 ![image](https://user-images.githubusercontent.com/48648751/206934657-ef1b790a-3e57-4549-852a-aa4b9c32cc63.png)
-<br>
-Результат работы поиска<br>
-![image](https://user-images.githubusercontent.com/48648751/206934714-9f225b80-c0ab-46f0-853e-6678440a902e.png)
+<br><br>
+Результат работы поиска<br><br>
+![image](https://user-images.githubusercontent.com/48648751/206934714-9f225b80-c0ab-46f0-853e-6678440a902e.png)<br>
 ![image](https://user-images.githubusercontent.com/48648751/206934727-03c1c009-4cb8-4aad-9010-2be628c0fc3a.png)
 
