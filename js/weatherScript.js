@@ -12,7 +12,7 @@ function getTime(timeDescription) {
 }
 
 
-
+changeBackground(weatherStatusTranslation('overcast'));
 
 
 window.addEventListener("load", () => {
@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
           changeIconWeather(icon);
           temp <= 0 ? (temperatureDegree.textContent = temp) : (temperatureDegree.textContent = "+" + temp);
           feels_like <= 0 ? (feels.textContent = `Ощущается как: ${feels_like}°`) : (feels.textContent = `Ощущается как: +${feels_like}°`);
-          temperatureDegree.textContent = temp;
+          temperatureDegree.textContent = `${temp}°`;
           location.textContent = name;
 
 

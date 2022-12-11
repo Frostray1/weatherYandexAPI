@@ -6,9 +6,10 @@
 }
 
 .bgVideo {
-  width: 100vw;
+  // width: 100vw;
   height: 100vh;
   position: relative;
+  overflow:hidden;
   z-index: -99999;
 }
 
