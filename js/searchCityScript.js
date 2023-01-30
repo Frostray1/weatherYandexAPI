@@ -12,8 +12,8 @@ var search_button = document.querySelector(".search__img");
 search_button.addEventListener("click", function () {
   let search_text = document.querySelector(".search__input");
   console.log(search_text.value);
-  const proxy = "https://cors-anywhere.herokuapp.com/";
-  const geoApi = `${proxy}https://nominatim.openstreetmap.org/search?city=${search_text.value}&format=jsonv2`;
+  // const proxy = "https://cors-anywhere.herokuapp.com/";
+  const geoApi = `https://nominatim.openstreetmap.org/search?city=${search_text.value}&format=jsonv2`;
   fetch(geoApi)
     .then((response) => {
       return response.json();
