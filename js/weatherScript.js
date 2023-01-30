@@ -29,8 +29,8 @@ window.addEventListener("load", () => {
       console.log(positions);
       longitude = positions.coords.longitude;
       latitude = positions.coords.latitude;
-      const proxy = "https://cors-anywhere.herokuapp.com/";
-      const api = `${proxy}https://api.weather.yandex.ru/v1/forecast?lat=${latitude}&lon=${longitude}&lang=ru_RU`;
+      // const proxy = "https://cors-anywhere.herokuapp.com/";
+      const api = `https://api.weather.yandex.ru/v1/forecast?lat=${latitude}&lon=${longitude}&lang=ru_RU`;
       fetch(api, {
         headers: {
           "X-Yandex-API-Key": "23f9a2c5-b711-4261-8cad-c08c5c2b6c9c",
