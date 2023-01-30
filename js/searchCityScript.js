@@ -20,7 +20,7 @@ search_button.addEventListener("click", function () {
     })
     .then((data) => {
       const { lat, lon } = data[0];
-      const api = `${proxy}https://api.weather.yandex.ru/v1/forecast?lat=${lat}&lon=${lon}&lang=ru_RU`;
+      const api = `https://api.weather.yandex.ru/v1/forecast?lat=${lat}&lon=${lon}&lang=ru_RU`;
       fetch(api, {
         headers: {
           "X-Yandex-API-Key": "23f9a2c5-b711-4261-8cad-c08c5c2b6c9c",
