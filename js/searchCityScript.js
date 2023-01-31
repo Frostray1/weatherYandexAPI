@@ -8,9 +8,24 @@ let temperatureDegree = document.querySelector(".temperature__number");
 let location = document.querySelector(".location__sity");
 let feels = document.querySelector(".feels_like");
 var search_button = document.querySelector(".search__img");
+let search_text = document.querySelector(".search__input");
+search_text.addEventListener("click", function() {
+  search_text.value=""
+});
+search_text.addEventListener("keydown", function(e) {
+  if (e.keyCode === 13) {
+    searchCity();
+  }
+});
+
+
+
 
 search_button.addEventListener("click", function () {
-  let search_text = document.querySelector(".search__input");
+  searchCity();
+});
+
+function searchCity ( ) {
   console.log(search_text.value);
   // const proxy = "https://cors-anywhere.herokuapp.com/";
   const geoApi = `https://nominatim.openstreetmap.org/search?city=${search_text.value}&format=jsonv2`;
@@ -21,18 +36,21 @@ search_button.addEventListener("click", function () {
     .then((data) => {
 
       const { lat, lon } = data[0];
-      const city = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`;
-      fetch(city, {
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
+      const {display_name} = data[0];
+
+      location.textContent = display_name.split(',')[0];
+      // const city = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`;
+      // fetch(city, {
+      // })
+      //   .then((response) => {
+      //     return response.json();
+      //   })
+      //   .then((data) => {
           
-          const {city } = data.address;
-          console.log('Город - ',city);
-          location.textContent = city;
-        });
+      //     const {city } = data.address;
+      //     console.log('Город - ',city);
+      //     location.textContent = city;
+      //   });
       const api = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,apparent_temperature`;
       fetch(api, {
 
@@ -59,4 +77,4 @@ search_button.addEventListener("click", function () {
 
         });
     });
-});
+}
