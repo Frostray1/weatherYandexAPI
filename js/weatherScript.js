@@ -29,21 +29,21 @@ window.addEventListener("load", () => {
       console.log(positions);
       longitude = positions.coords.longitude;
       latitude = positions.coords.latitude;
-      // const proxy = "https://cors-anywhere.herokuapp.com/";
-      const api = `https://api.weather.yandex.ru/v1/forecast?lat=${latitude}&lon=${longitude}&lang=ru_RU`;
+      const proxy = "https://cors-anywhere.herokuapp.com/";
+      const api = `${proxy}https://api.weather.yandex.ru/v2/forecast?lat=${latitude}&lon=${longitude}&lang=ru_RU`;
       fetch(api, {
         headers: {
-          'Content-Type': 'application/json',
-          "X-Yandex-API-Key": "23f9a2c5-b711-4261-8cad-c08c5c2b6c9c",
+          "X-Yandex-API-Key": "894a9c20-33ac-4cc6-82fb-48608d53879a",
         },
       })
         .then((response) => {
           return response.json();
         })
         .then((data) => {
-          console.log(data);
+          console.log('----123  ',data);
           const { temp, condition, icon, feels_like, wind_speed, pressure_mm, humidity} = data.fact;
           const { name } = data.geo_object.locality;
+          
           changeBackground(weatherStatusTranslation(condition));
           changeIconWeather(icon);
           temp <= 0 ? (temperatureDegree.textContent = temp) : (temperatureDegree.textContent = "+" + temp);
