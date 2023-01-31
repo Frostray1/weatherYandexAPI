@@ -19,30 +19,44 @@ search_button.addEventListener("click", function () {
       return response.json();
     })
     .then((data) => {
+
       const { lat, lon } = data[0];
-      const api = `https://api.weather.yandex.ru/v1/forecast?lat=${lat}&lon=${lon}&lang=ru_RU`;
-      fetch(api, {
-        headers: {
-          "X-Yandex-API-Key": "23f9a2c5-b711-4261-8cad-c08c5c2b6c9c",
-        },
+      const city = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`;
+      fetch(city, {
       })
         .then((response) => {
           return response.json();
         })
         .then((data) => {
-          const { temp, condition, icon, feels_like, wind_speed, pressure_mm, humidity } = data.fact;
-          const { name } = data.geo_object.locality;
+          
+          const {city } = data.address;
+          console.log('Город - ',city);
+          location.textContent = city;
+        });
+      const api = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,apparent_temperature`;
+      fetch(api, {
 
-          let weatherСondition = weatherStatusTranslation(condition);
-          changeBackground(weatherСondition);
-          changeIconWeather(icon);
-          temp <= 0 ? temperatureDegree.textContent = temp : temperatureDegree.textContent = '+'+ temp ;
-          feels_like <= 0 ? feels.textContent = `Ощущается как: ${feels_like}°` : feels.textContent = `Ощущается как: +${feels_like}°`;
-          location.textContent = name;
-          const { forecasts } = data;
-          weatherForecast(forecasts);
-          changeDateForecasts(forecasts);
-          loadInformation(wind_speed, pressure_mm, humidity);
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log('',data);
+          const {weathercode, temperature, windspeed } = data.current_weather;
+          const {relativehumidity_2m,pressure_msl,apparent_temperature}=data.hourly;
+          console.log("Владность - ",relativehumidity_2m[0])
+          let condition = weatherStatusTranslation(weathercode);
+          changeIconWeather(condition);
+          temperature <= 0 ? (temperatureDegree.textContent = `-${Math.round(temperature)}°`) : (temperatureDegree.textContent = "+" + `${Math.round(temperature)}°`);
+          // feels_like <= 0 ? (feels.textContent = `Ощущается как: ${feels_like}°`) : (feels.textContent = `Ощущается как: +${feels_like}°`);
+          changeBackground(condition);
+
+          // const { forecasts } = data;
+          // weatherForecast(forecasts);
+          // changeDateForecasts(forecasts);
+
+          loadInformation(windspeed, pressure_msl[0], relativehumidity_2m[0]);
+
         });
     });
 });

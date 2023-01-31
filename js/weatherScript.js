@@ -12,7 +12,7 @@ function getTime(timeDescription) {
 }
 
 
-// changeBackground(weatherStatusTranslation('overcast'));
+
 
 
 window.addEventListener("load", () => {
@@ -55,9 +55,9 @@ window.addEventListener("load", () => {
           console.log("Владность - ",relativehumidity_2m[0])
           let condition = weatherStatusTranslation(weathercode);
           changeIconWeather(condition);
-          temperature <= 0 ? (temperatureDegree.textContent = `-${Math.round(temperature)}°`) : (temperatureDegree.textContent = "+" + `${Math.round(temperature)}°`);
+          temperature <= 0 ? (temperatureDegree.textContent = `${Math.round(temperature)}°`) : (temperatureDegree.textContent = "+" + `${Math.round(temperature)}°`);
           // feels_like <= 0 ? (feels.textContent = `Ощущается как: ${feels_like}°`) : (feels.textContent = `Ощущается как: +${feels_like}°`);
-
+          changeBackground(condition);
 
           // const { forecasts } = data;
           // weatherForecast(forecasts);
