@@ -1,5 +1,5 @@
-import {changeIconWeatherForecast } from "./changeIconWeatherScript.js";
-import {weatherStatusTranslationForecast } from "./changeConditionScript.js";
+// import {changeIconWeatherForecast } from "./changeIconWeatherScript.js";
+// import {weatherStatusTranslationForecast } from "./changeConditionScript.js";
 
 export function weatherForecast(forecasts){
     let weatherForecast__temp = document.querySelectorAll('.weatherForecast__temp');

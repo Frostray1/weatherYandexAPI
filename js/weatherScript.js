@@ -12,7 +12,7 @@ function getTime(timeDescription) {
 }
 
 
-changeBackground(weatherStatusTranslation('overcast'));
+// changeBackground(weatherStatusTranslation('overcast'));
 
 
 window.addEventListener("load", () => {
@@ -29,40 +29,47 @@ window.addEventListener("load", () => {
       console.log(positions);
       longitude = positions.coords.longitude;
       latitude = positions.coords.latitude;
-      const proxy = "https://cors-anywhere.herokuapp.com/";
-      const api = `${proxy}https://api.weather.yandex.ru/v2/forecast?lat=${latitude}&lon=${longitude}&lang=ru_RU`;
-      fetch(api, {
-        headers: {
-          "X-Yandex-API-Key": "894a9c20-33ac-4cc6-82fb-48608d53879a",
-        },
+      const city = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
+      const api = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,apparent_temperature`;
+      fetch(city, {
       })
         .then((response) => {
           return response.json();
         })
         .then((data) => {
-          console.log('----123  ',data);
-          const { temp, condition, icon, feels_like, wind_speed, pressure_mm, humidity} = data.fact;
-          const { name } = data.geo_object.locality;
           
-          changeBackground(weatherStatusTranslation(condition));
-          changeIconWeather(icon);
-          temp <= 0 ? (temperatureDegree.textContent = temp) : (temperatureDegree.textContent = "+" + temp);
-          feels_like <= 0 ? (feels.textContent = `Ощущается как: ${feels_like}°`) : (feels.textContent = `Ощущается как: +${feels_like}°`);
-          temperatureDegree.textContent = `${temp}°`;
-          location.textContent = name;
+          const {city } = data.address;
+          console.log('Город - ',city);
+          location.textContent = city;
+        });
+        
+      fetch(api, {
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log('',data);
+          const {weathercode, temperature, windspeed } = data.current_weather;
+          const {relativehumidity_2m,pressure_msl,apparent_temperature}=data.hourly;
+          console.log("Владность - ",relativehumidity_2m[0])
+          let condition = weatherStatusTranslation(weathercode);
+          changeIconWeather(condition);
+          temperature <= 0 ? (temperatureDegree.textContent = `-${Math.round(temperature)}°`) : (temperatureDegree.textContent = "+" + `${Math.round(temperature)}°`);
+          // feels_like <= 0 ? (feels.textContent = `Ощущается как: ${feels_like}°`) : (feels.textContent = `Ощущается как: +${feels_like}°`);
 
 
-          const { forecasts } = data;
-          weatherForecast(forecasts);
-          changeDateForecasts(forecasts);
+          // const { forecasts } = data;
+          // weatherForecast(forecasts);
+          // changeDateForecasts(forecasts);
 
-          loadInformation(wind_speed, pressure_mm, humidity);
+          loadInformation(windspeed, pressure_msl[0], relativehumidity_2m[0]);
 
           
           
         });
     });
   } else {
-    alert("Включи геопозицию");
+    alert("Включите геопозицию");
   }
 });

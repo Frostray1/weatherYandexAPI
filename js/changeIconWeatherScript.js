@@ -1,44 +1,45 @@
-const format = {
-  "bkn_-ra_d":'/icons//animated/bkn_-ra_d.svg',
-  "bkn_-ra_n":'/icons/bkn_-ra_n.svg',
-  "bkn_-sn_d":'/icons/bkn_-sn_d.svg',
-  "bkn_-sn_n":'/icons/bkn_-sn_n.svg',
-  "bkn_+ra_d":'/icons/animated/bkn_+ra_d.svg',
-  "bkn_+ra_n":'/icons/bkn_+ra_n.svg',
-  "bkn_+sn_d":'/icons/animated/bkn_+sn_d.svg',
-  "bkn_+sn_n":'/icons/bkn_+sn_n.svg',
+const iconFormat = {
+  "ясно":"/icons/animated/skc_d.svg",
+  "Преимущественно ясно":"/icons/animated/cloudy-day-3.svg",
+  "малооблачно":"/icons/animated/ovc.svg",
+  "пасмурно":"/icons/animated/ovc.svg",
+  "туман":"/icons/animated/ovc.svg",
+  "Туман с инеем":"/icons/animated/ovc.svg",
+  "морось":"/icons/animated/ovc_-ra.svg",
+  "морось":"/icons/animated/ovc_-ra.svg",
+  "морось":"/icons/animated/ovc_-ra.svg",
+  "Моросящий дождь":"/icons/animated/rainy-5.svg",
+  "Моросящий дождь":"/icons/animated/rainy-5.svg",
+  "небольшой дождь":"/icons/animated/rainy-5.svg",
+  "дождь" :"/icons/animated/rainy-5.svg",
+  "сильный дождь":"/icons/animated/rainy-7.svg",
+  "Ледяной дождь":"/icons/animated/rainy-7.svg",
+  "Ледяной дождь":"/icons/animated/rainy-7.svg",
+  "небольшой снег":"/icons/animated/snowy-2.svg",
+  "снег ":"/icons/animated/snowy-2.svg",
+  "снегопад":"/icons/animated/snowy-6.svg",
+  "пурга":"/icons/animated/snowy-6.svg",
+  " ливень":"/icons/animated/rainy-7.svg",
+  "ливень":"/icons/animated/rainy-7.svg",
+  "ливень":"/icons/animated/rainy-7.svg",
+  "небольшой снег":"/icons/animated/snowy-2.svg",
+  "сильный снегопад":"/icons/animated/snowy-6.svg",
+  "гроза":"/icons/animated/ovc_ts_ra.svg",
+  "гроза с небольшим градом ":"/icons/animated/ovc_ts_ra.svg",
+  "гроза с сильным градом":"/icons/animated/ovc_ts_ra.svg",
 
-  "bkn_d":'/icons/animated/bkn_d.svg',
-  "bkn_n":'/icons/animated/bkn_n.svg',
-  "bkn_ra_d":'/icons/bkn_ra_d.svg',
-  "bkn_ra_n":'/icons/bkn_ra_n.svg',
-  "bkn_sn_d":'/icons/animated/bkn_sn_d.svg',
-  "bkn_sn_n":'/icons/bkn_sn_n.svg',
-  "ovc_-ra":'/icons/animated/ovc_-ra.svg',
-  "ovc_-sn":'/icons/animated/ovc_-sn.svg',
-  "ovc_+ra":'/icons/animated/ovc_+ra.svg',
-  "ovc_+sn":'/icons/ovc_+sn.svg',
-
-  "ovc_ra_sn":'/icons/ovc_ra_sn.svg',
-  "ovc_ra":'/icons/ovc_ra.svg',
-  "ovc_sn":'/icons/animated/ovc_sn.svg',
-  "ovc_ts_ra":'/icons/animated/ovc_ts_ra.svg',
-  "skc_d":'/icons/animated/skc_d.svg',
-  "skc_n":'/icons/animated/skc_n.svg',
-  "wnd":'/icons/wnd.svg',
-  "ovc":'/icons/animated/ovc.svg'
 }
 
 
-export function changeIconWeather(icon){
+export function changeIconWeather(condition){
   
-  document.getElementById('weatherIcons').src = format[icon];
-  return format[icon]
+  document.getElementById('weatherIcons').src = iconFormat[condition];
+  return iconFormat[condition]
 
 }
 
 
-export function changeIconWeatherForecast(icon){
-  return format[icon]
+// export function changeIconWeatherForecast(icon){
+//   return format[icon]
 
-}
+// }
