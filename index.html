@@ -18,48 +18,74 @@
       <div class="preloader-5"></div>
       <h3 class="preloader__text">Завариваем чай</h3>
     </div>
-    
-   <div class="mainContainer">
+
+    <div class="mainContainer">
       <div class="leftBlockWeather" id="leftBlockWeather">
         <div class="wind__speed">
-          <img class="wind__speedIcon" src="/icons/leftBlockIcons/wind.svg" alt="">
+          <img
+            class="wind__speedIcon"
+            src="/icons/leftBlockIcons/wind.svg"
+            alt=""
+          />
           <h4 class="wind__speedText">Скорость ветра 4 м/с</h4>
         </div>
         <div class="pressure_mm">
-          <img class="pressure_mmIcon" src="/icons/leftBlockIcons/pressure.svg" alt="">
+          <img
+            class="pressure_mmIcon"
+            src="/icons/leftBlockIcons/pressure.svg"
+            alt=""
+          />
           <h4 class="pressure_mmText">Давление 758 мм рт. ст.</h4>
         </div>
         <div class="humidity">
-          <img class="humidityIcon" src="/icons/leftBlockIcons/humidity.svg" alt="">
+          <img
+            class="humidityIcon"
+            src="/icons/leftBlockIcons/humidity.svg"
+            alt=""
+          />
           <h4 class="humidityText">Влажность воздуха 86%</h4>
         </div>
       </div>
       <div class="upDownBlocks">
-      <div class="weather" id = 'weather'>
-       <div class="timeAndSearch">
-        <div class="time"></div>
-        <div class="search">
-        <input class="search__input" type="text" name="search__input" id="search__input" placeholder="Поиск" value="Краснодар">
-        <img class="search__img" src="/icons/searc_icon.svg" alt="">
-      </div>
-      </div>
-
-        <div class="location">
-          <div class="location__sity">Москва</div>
-          <div class="icon">
-            <img
-              class="weatherIcons"
-              id="weatherIcons"
-              src="/icons/animated/ovc.svg"
-              alt=""
-            />
+        <div class="weather" id="weather">
+          <div class="timeAndSearch">
+            <div class="time"></div>
+            <div class="search">
+              <input
+                class="search__input"
+                type="text"
+                name="search__input"
+                id="search__input"
+                placeholder="Поиск"
+              />
+              <img class="search__img" src="/icons/searc_icon.svg" alt="" />
+            </div>
+          </div>
+          <div id="search__block" class="search__block">
+            <div id="location" class="location">
+              <div class="location__sity">Москва</div>
+              <div class="icon">
+                <img
+                  class="weatherIcons"
+                  id="weatherIcons"
+                  src="/icons/animated/ovc.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="temperature__number">+15°</div>
+            <div class="feels_like"></div>
+            <div class="condition" id="condition">Пасмурно</div>
+          </div>
+          <div id="selectCity" class="selectCity">
+          
+            <ul class="list" id="list">
+            
+            </ul>
           </div>
         </div>
-        <div class="temperature__number">+15°</div>
-      <div class="feels_like"></div>
-        <div class="condition" id="condition">Пасмурно</div>
-      </div>
-      <!-- <div class="downBlockWeather" id="downBlockWeather">
+
+        <!-- <div class="downBlockWeather" id="downBlockWeather">
         <ul class="weatherForecast">
           <li class="weatherForecast__list">
             <h4 class="dayOfTheWeek">понедельник</h4>
@@ -114,19 +140,21 @@
           
         </ul>
       </div> -->
+      </div>
     </div>
-     
-    </div>
-    
+
     <div class="bgVideo">
-      <video class="bgVideo__media" id='bgVideo__media'type="video" src="" autoplay muted loop ></video>
-      
+      <video
+        class="bgVideo__media"
+        id="bgVideo__media"
+        type="video"
+        src=""
+        autoplay
+        muted
+        loop
+      ></video>
     </div>
-    
-    
-   
-  
-  
+
     <script type="module" src="/js/weatherScript.js"></script>
     <script type="module" src="/js/preloaderScript.js"></script>
     <script type="module" src="/js/changeIconWeatherScript.js"></script>

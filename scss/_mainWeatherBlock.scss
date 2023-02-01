@@ -75,3 +75,25 @@
   .condition {
     font-size: 20px;
   }
+
+  .selectCity{
+    display:none;
+    
+
+    li{
+      width: 90%;
+      // height: 70px;
+      
+      margin: 1.5em auto;
+      border:1px solid rgb(127, 135, 141);
+      text-align: left;
+      list-style-type:none;
+      padding: 1em;
+      border-radius:25px;
+      cursor: pointer;
+    }
+  }
+
+  .search__block{
+    display:block;
+  }

@@ -52,13 +52,12 @@ window.addEventListener("load", () => {
           console.log('',data);
           const {weathercode, temperature, windspeed } = data.current_weather;
           const {relativehumidity_2m,pressure_msl,apparent_temperature}=data.hourly;
-          console.log("Владность - ",relativehumidity_2m[0])
           let condition = weatherStatusTranslation(weathercode);
           changeIconWeather(condition);
-          temperature <= 0 ? (temperatureDegree.textContent = `${Math.round(temperature)}°`) : (temperatureDegree.textContent = "+" + `${Math.round(temperature)}°`);
+          // temperature <= 0 ? (temperatureDegree.textContent = `${Math.round(temperature)}°`) : (temperatureDegree.textContent = "+" + `${Math.round(temperature)}°`);
           // feels_like <= 0 ? (feels.textContent = `Ощущается как: ${feels_like}°`) : (feels.textContent = `Ощущается как: +${feels_like}°`);
           changeBackground(condition);
-
+          temperatureDegree.textContent = `${Math.round(temperature)}°`
           // const { forecasts } = data;
           // weatherForecast(forecasts);
           // changeDateForecasts(forecasts);

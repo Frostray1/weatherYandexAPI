@@ -1,44 +1,83 @@
 import { changeIconWeather } from "./changeIconWeatherScript.js";
 import { weatherStatusTranslation } from "./changeConditionScript.js";
 import { changeBackground } from "./changeBackgroundScript.js";
-import { weatherForecast, changeDateForecasts } from "./weatherForecastScript.js";
+import {
+  weatherForecast,
+  changeDateForecasts,
+} from "./weatherForecastScript.js";
 import { loadInformation } from "./leftBlockInformationSrcipt.js";
 
 let temperatureDegree = document.querySelector(".temperature__number");
-let location = document.querySelector(".location__sity");
-let feels = document.querySelector(".feels_like");
+let locationCity = document.querySelector(".location__sity");
+
 var search_button = document.querySelector(".search__img");
 let search_text = document.querySelector(".search__input");
-search_text.addEventListener("click", function() {
-  search_text.value=""
+search_text.addEventListener("click", function () {
+  search_text.value = "";
 });
-search_text.addEventListener("keydown", function(e) {
+search_text.addEventListener("keydown", function (e) {
   if (e.keyCode === 13) {
-    searchCity();
+    document.getElementById("search__block").style.display = "none";
+    document.getElementById("selectCity").style.display = "block";
+
+    const geoApi = `https://nominatim.openstreetmap.org/search?city=${search_text.value}&format=jsonv2`;
+    fetch(geoApi)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const { lat, lon } = data[0];
+        const { display_name } = data[0];
+        let dataLength
+
+
+        data.length > 4 ? dataLength = 4 : dataLength = data.length;
+        console.log(dataLength);
+
+        const $list = document.querySelector("#list");
+        let $fragment = new DocumentFragment();
+        for (let i = 0; i < dataLength; i++) {
+          let { display_name } = data[i];
+          const $li = document.createElement("li");
+          $li.textContent = display_name;
+          $li.id = i;
+          $li.className = "searchLiValue";
+          $li.addEventListener('click', () => {
+            searchCity($li.id);
+          })
+          $fragment.appendChild($li);
+        }
+      
+        document.querySelector("#list").append($fragment);
+
+      });
   }
 });
 
 
 
-
 search_button.addEventListener("click", function () {
-  searchCity();
+  // searchCity();
 });
 
-function searchCity ( ) {
-  console.log(search_text.value);
-  // const proxy = "https://cors-anywhere.herokuapp.com/";
+function searchCity(id) {
+
+  document.getElementById("search__block").style.display = "block";
+  document.getElementById("selectCity").style.display = "none";
+  var myList = document.getElementById('list');
+  myList.innerHTML = '';
+
+
   const geoApi = `https://nominatim.openstreetmap.org/search?city=${search_text.value}&format=jsonv2`;
   fetch(geoApi)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
+      const { lat, lon } = data[id];
+      const { display_name } = data[id];
 
-      const { lat, lon } = data[0];
-      const {display_name} = data[0];
-
-      location.textContent = display_name.split(',')[0];
+      locationCity.textContent = display_name.split(",")[0];
       // const city = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`;
       // fetch(city, {
       // })
@@ -46,26 +85,25 @@ function searchCity ( ) {
       //     return response.json();
       //   })
       //   .then((data) => {
-          
+
       //     const {city } = data.address;
       //     console.log('Город - ',city);
       //     location.textContent = city;
       //   });
       const api = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,apparent_temperature`;
-      fetch(api, {
-
-      })
+      fetch(api, {})
         .then((response) => {
           return response.json();
         })
         .then((data) => {
-          console.log('',data);
-          const {weathercode, temperature, windspeed } = data.current_weather;
-          const {relativehumidity_2m,pressure_msl,apparent_temperature}=data.hourly;
-          console.log("Владность - ",relativehumidity_2m[0])
+          console.log("", data);
+          const { weathercode, temperature, windspeed } = data.current_weather;
+          const { relativehumidity_2m, pressure_msl, apparent_temperature } =
+            data.hourly;
+          console.log("Владность - ", relativehumidity_2m[0]);
           let condition = weatherStatusTranslation(weathercode);
           changeIconWeather(condition);
-          temperature <= 0 ? (temperatureDegree.textContent = `-${Math.round(temperature)}°`) : (temperatureDegree.textContent = "+" + `${Math.round(temperature)}°`);
+          temperatureDegree.textContent = `${Math.round(temperature)}°`
           // feels_like <= 0 ? (feels.textContent = `Ощущается как: ${feels_like}°`) : (feels.textContent = `Ощущается как: +${feels_like}°`);
           changeBackground(condition);
 
@@ -74,7 +112,6 @@ function searchCity ( ) {
           // changeDateForecasts(forecasts);
 
           loadInformation(windspeed, pressure_msl[0], relativehumidity_2m[0]);
-
         });
     });
 }
