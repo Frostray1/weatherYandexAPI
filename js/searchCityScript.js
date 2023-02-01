@@ -17,6 +17,8 @@ search_text.addEventListener("click", function () {
 });
 search_text.addEventListener("keydown", function (e) {
   if (e.keyCode === 13) {
+    var myList = document.getElementById('list');
+    myList.innerHTML = '';
     document.getElementById("search__block").style.display = "none";
     document.getElementById("selectCity").style.display = "block";
 
@@ -78,18 +80,7 @@ function searchCity(id) {
       const { display_name } = data[id];
 
       locationCity.textContent = display_name.split(",")[0];
-      // const city = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`;
-      // fetch(city, {
-      // })
-      //   .then((response) => {
-      //     return response.json();
-      //   })
-      //   .then((data) => {
-
-      //     const {city } = data.address;
-      //     console.log('Город - ',city);
-      //     location.textContent = city;
-      //   });
+     
       const api = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,apparent_temperature`;
       fetch(api, {})
         .then((response) => {
@@ -100,7 +91,7 @@ function searchCity(id) {
           const { weathercode, temperature, windspeed } = data.current_weather;
           const { relativehumidity_2m, pressure_msl, apparent_temperature } =
             data.hourly;
-          console.log("Владность - ", relativehumidity_2m[0]);
+        
           let condition = weatherStatusTranslation(weathercode);
           changeIconWeather(condition);
           temperatureDegree.textContent = `${Math.round(temperature)}°`
