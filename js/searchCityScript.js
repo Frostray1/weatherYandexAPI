@@ -21,6 +21,8 @@ search_text.addEventListener("keydown", function (e) {
     myList.innerHTML = '';
     document.getElementById("search__block").style.display = "none";
     document.getElementById("selectCity").style.display = "block";
+    document.getElementById("weatherForecast").style.display = "none";
+    
 
     const geoApi = `https://nominatim.openstreetmap.org/search?city=${search_text.value}&format=jsonv2`;
     fetch(geoApi)
@@ -66,6 +68,7 @@ function searchCity(id) {
 
   document.getElementById("search__block").style.display = "block";
   document.getElementById("selectCity").style.display = "none";
+  document.getElementById("weatherForecast").style.display = "flex";
   var myList = document.getElementById('list');
   myList.innerHTML = '';
 
@@ -81,7 +84,7 @@ function searchCity(id) {
 
       locationCity.textContent = display_name.split(",")[0];
      
-      const api = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,apparent_temperature`;
+      const api = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,apparent_temperature&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto`;
       fetch(api, {})
         .then((response) => {
           return response.json();
@@ -93,14 +96,12 @@ function searchCity(id) {
             data.hourly;
         
           let condition = weatherStatusTranslation(weathercode);
+          console.log("код ",condition, " code- ",weathercode )
+          document.getElementById("condition").textContent = condition;
           changeIconWeather(condition);
           temperatureDegree.textContent = `${Math.round(temperature)}°`
-          // feels_like <= 0 ? (feels.textContent = `Ощущается как: ${feels_like}°`) : (feels.textContent = `Ощущается как: +${feels_like}°`);
           changeBackground(condition);
-
-          // const { forecasts } = data;
-          // weatherForecast(forecasts);
-          // changeDateForecasts(forecasts);
+          weatherForecast(data.daily);
 
           loadInformation(windspeed, pressure_msl[0], relativehumidity_2m[0]);
         });

@@ -19,7 +19,7 @@ const iconFormat = {
   "снег ":"/icons/animated/snowy-2.svg",
   "снегопад":"/icons/animated/snowy-6.svg",
   "пурга":"/icons/animated/snowy-6.svg",
-  " ливень":"/icons/animated/rainy-7.svg",
+  "ливень":"/icons/animated/rainy-7.svg",
   "ливень":"/icons/animated/rainy-7.svg",
   "ливень":"/icons/animated/rainy-7.svg",
   "небольшой снег":"/icons/animated/snowy-2.svg",
@@ -29,17 +29,11 @@ const iconFormat = {
   "гроза с сильным градом":"/icons/animated/ovc_ts_ra.svg",
 
 }
-
-
 export function changeIconWeather(condition){
-  
   document.getElementById('weatherIcons').src = iconFormat[condition];
+  return iconFormat[condition]
+}
+export function changeIconWeatherForecast(condition){
   return iconFormat[condition]
 
 }
-
-
-// export function changeIconWeatherForecast(icon){
-//   return format[icon]
-
-// }
