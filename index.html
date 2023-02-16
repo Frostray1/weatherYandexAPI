@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/scss/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,134 +12,154 @@
       rel="stylesheet"
     />
     <title>Weather Widget</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
-    <div class="preloader__window">
+    <!-- <div class="preloader__window">
       <div class="preloader-5"></div>
       <h3 class="preloader__text">Завариваем чай</h3>
-    </div>
+    </div> -->
 
     <div class="mainContainer">
-      <div class="leftBlockWeather" id="leftBlockWeather">
-        <div class="wind__speed">
-          <img
-            class="wind__speedIcon"
-            src="/icons/leftBlockIcons/wind.svg"
-            alt=""
-          />
-          <h4 class="wind__speedText">Скорость ветра 4 м/с</h4>
-        </div>
-        <div class="pressure_mm">
-          <img
-            class="pressure_mmIcon"
-            src="/icons/leftBlockIcons/pressure.svg"
-            alt=""
-          />
-          <h4 class="pressure_mmText">Давление 758 мм рт. ст.</h4>
-        </div>
-        <div class="humidity">
-          <img
-            class="humidityIcon"
-            src="/icons/leftBlockIcons/humidity.svg"
-            alt=""
-          />
-          <h4 class="humidityText">Влажность воздуха 86%</h4>
-        </div>
-      </div>
-      <div class="upDownBlocks">
-        <div class="weather" id="weather">
-          <div class="timeAndSearch">
-            <div class="time"></div>
-            <div class="search">
-              <input
-                class="search__input"
-                type="text"
-                name="search__input"
-                id="search__input"
-                placeholder="Поиск"
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+          <div class="leftBlockWeather" id="leftBlockWeather">
+            <div class="wind__speed">
+              <img
+                class="wind__speedIcon"
+                src="/icons/leftBlockIcons/wind.svg"
+                alt=""
               />
-              <img class="search__img" src="/icons/searc_icon.svg" alt="" />
+              <h4 class="wind__speedText">Скорость ветра 4 м/с</h4>
+            </div>
+            <div class="pressure_mm">
+              <img
+                class="pressure_mmIcon"
+                src="/icons/leftBlockIcons/pressure.svg"
+                alt=""
+              />
+              <h4 class="pressure_mmText">Давление 758 мм рт. ст.</h4>
+            </div>
+            <div class="humidity">
+              <img
+                class="humidityIcon"
+                src="/icons/leftBlockIcons/humidity.svg"
+                alt=""
+              />
+              <h4 class="humidityText">Влажность воздуха 86%</h4>
             </div>
           </div>
-          <div id="search__block" class="search__block">
-            <div id="location" class="location">
-              <div class="location__sity">Москва</div>
-              <div class="icon">
-                <img
-                  class="weatherIcons"
-                  id="weatherIcons"
-                  src="/icons/animated/ovc.svg"
-                  alt=""
-                />
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="upDownBlocks">
+              <div class="weather" id="weather">
+                <div class="timeAndSearch">
+                  <div class="time"></div>
+                  <div class="search">
+                    <input
+                      class="search__input"
+                      type="text"
+                      name="search__input"
+                      id="search__input"
+                      placeholder="Поиск"
+                    />
+                    <img class="search__img" src="/icons/searc_icon.svg" alt="" />
+                  </div>
+                </div>
+                <div id="search__block" class="search__block">
+                  <div id="location" class="location">
+                    <div class="location__sity">Москва</div>
+                    <div class="icon">
+                      <img
+                        class="weatherIcons"
+                        id="weatherIcons"
+                        src="/icons/animated/ovc.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="temperature__number">+15°</div>
+                  <div class="feels_like"></div>
+                  <div class="condition" id="condition">хуй</div>
+                </div>
+                <div id="selectCity" class="selectCity">
+                
+                  <ul class="list" id="list">
+                  
+                  </ul>
+                </div>
               </div>
             </div>
-            <div class="temperature__number">+15°</div>
-            <div class="feels_like"></div>
-            <div class="condition" id="condition">хуй</div>
+            <div class="row">
+               
+              <div class="downBlockWeather" id="downBlockWeather">
+                <ul id="weatherForecast" class="weatherForecast">
+                  <li class="weatherForecast__list">
+                    <h4 class="dayOfTheWeek">понедельник</h4>
+                    <p class="date"> 14 декабря</p>
+                    <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
+                    <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
+                    <h6 class="weatherForecast__condition">Пасмурно</h6>
+                  </li>
+                  <li class="weatherForecast__list">
+                    <h4 class="dayOfTheWeek">понедельник</h4>
+                    <p class="date"> 14 декабря</p>
+                    <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
+                    <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
+                    <h6 class="weatherForecast__condition">Пасмурно</h6>
+                  </li>
+                  <li class="weatherForecast__list">
+                    <h4 class="dayOfTheWeek">понедельник</h4>
+                    <p class="date"> 14 декабря</p>
+                    <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
+                    <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
+                    <h6 class="weatherForecast__condition">Пасмурно</h6>
+                  </li>
+                  <li class="weatherForecast__list">
+                    <h4 class="dayOfTheWeek">понедельник</h4>
+                    <p class="date"> 14 декабря</p>
+                    <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
+                    <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
+                    <h6 class="weatherForecast__condition">Пасмурно</h6>
+                  </li>
+                  <li class="weatherForecast__list">
+                    <h4 class="dayOfTheWeek">понедельник</h4>
+                    <p class="date"> 14 декабря</p>
+                    <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
+                    <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
+                    <h6 class="weatherForecast__condition">Пасмурно</h6>
+                  </li>
+                  <li class="weatherForecast__list">
+                    <h4 class="dayOfTheWeek">понедельник</h4>
+                    <p class="date"> 14 декабря</p>
+                    <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
+                    <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
+                    <h6 class="weatherForecast__condition">Пасмурно</h6>
+                  </li>
+                  <li class="weatherForecast__list">
+                    <h4 class="dayOfTheWeek">Воскресенье</h4>
+                    <p class="date"> 14 декабря</p>
+                    <img class="weatherForecast__icon" id="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
+                    <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
+                    <h6 class="weatherForecast__condition">Небольшой снег</h6>
+                  </li>
+                  
+            </div>
           </div>
-          <div id="selectCity" class="selectCity">
-          
-            <ul class="list" id="list">
-            
-            </ul>
-          </div>
-        </div>
 
-        <div class="downBlockWeather" id="downBlockWeather">
-        <ul id="weatherForecast" class="weatherForecast">
-          <li class="weatherForecast__list">
-            <h4 class="dayOfTheWeek">понедельник</h4>
-            <p class="date"> 14 декабря</p>
-            <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
-            <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
-            <h6 class="weatherForecast__condition">Пасмурно</h6>
-          </li>
-          <li class="weatherForecast__list">
-            <h4 class="dayOfTheWeek">понедельник</h4>
-            <p class="date"> 14 декабря</p>
-            <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
-            <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
-            <h6 class="weatherForecast__condition">Пасмурно</h6>
-          </li>
-          <li class="weatherForecast__list">
-            <h4 class="dayOfTheWeek">понедельник</h4>
-            <p class="date"> 14 декабря</p>
-            <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
-            <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
-            <h6 class="weatherForecast__condition">Пасмурно</h6>
-          </li>
-          <li class="weatherForecast__list">
-            <h4 class="dayOfTheWeek">понедельник</h4>
-            <p class="date"> 14 декабря</p>
-            <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
-            <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
-            <h6 class="weatherForecast__condition">Пасмурно</h6>
-          </li>
-          <li class="weatherForecast__list">
-            <h4 class="dayOfTheWeek">понедельник</h4>
-            <p class="date"> 14 декабря</p>
-            <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
-            <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
-            <h6 class="weatherForecast__condition">Пасмурно</h6>
-          </li>
-          <li class="weatherForecast__list">
-            <h4 class="dayOfTheWeek">понедельник</h4>
-            <p class="date"> 14 декабря</p>
-            <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
-            <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
-            <h6 class="weatherForecast__condition">Пасмурно</h6>
-          </li>
-          <li class="weatherForecast__list">
-            <h4 class="dayOfTheWeek">Воскресенье</h4>
-            <p class="date"> 14 декабря</p>
-            <img class="weatherForecast__icon" id="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
-            <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
-            <h6 class="weatherForecast__condition">Небольшой снег</h6>
-          </li>
-          
+        </div>
+      </div>
+      
+
+      
+
+      
           
         </ul>
       </div>
+   
       </div>
     </div>
 
@@ -154,7 +174,7 @@
         loop
       ></video>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script type="module" src="/js/weatherScript.js"></script>
     <script type="module" src="/js/preloaderScript.js"></script>
     <script type="module" src="/js/changeIconWeatherScript.js"></script>

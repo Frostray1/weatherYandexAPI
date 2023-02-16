@@ -58,11 +58,11 @@ window.addEventListener("load", () => {
           
           changeBackground(condition);
           temperatureDegree.textContent = `${Math.round(temperature)}°`
-          // const { forecasts } = data;
+        
           weatherForecast(data.daily);
-          // changeDateForecasts(forecasts);
+
           changeDateForecasts(time)
-          // console.log(time)
+
           loadInformation(windspeed, pressure_msl[0], relativehumidity_2m[0]);
 
           
