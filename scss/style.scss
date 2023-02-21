@@ -6,6 +6,7 @@
 }
 
 .bgVideo {
+
   width: 100vw;
   height: 110vh;
   position: relative;
@@ -20,9 +21,24 @@
 
 .mainContainer{
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ 
+  padding-top: 15vh;
   height: 100vh;
   width: 100vw;
+}
+
+
+@media (max-width: 993px){
+  .leftBlock{
+    display: none;
+  }
+  #downBlockWeather{
+    display: none;
+  }
+  #timeAndSearch{
+    margin:0;
+  }
+  .preloader__window{
+    height: 120vh;
+  }
 }

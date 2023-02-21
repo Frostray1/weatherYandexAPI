@@ -55,6 +55,7 @@ search_text.addEventListener("keydown", function (e) {
         document.querySelector("#list").append($fragment);
 
       });
+      // document.getElementById('bgVideo').setAttribute("style", "height:200vh");
   }
 });
 
@@ -90,7 +91,7 @@ function searchCity(id) {
           return response.json();
         })
         .then((data) => {
-          console.log("", data);
+          // console.log("", data);
           const { weathercode, temperature, windspeed } = data.current_weather;
           const { relativehumidity_2m, pressure_msl, apparent_temperature } =
             data.hourly;

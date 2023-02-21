@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,15 +15,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
-    <!-- <div class="preloader__window">
+    <div class="preloader__window">
       <div class="preloader-5"></div>
       <h3 class="preloader__text">Завариваем чай</h3>
-    </div> -->
+    </div>
 
     <div class="mainContainer">
       <div class="container text-center">
-        <div class="row">
-          <div class="col">
+        <div class="row ">
+          <div class="col col-md-2 leftBlock">
           <div class="leftBlockWeather" id="leftBlockWeather">
             <div class="wind__speed">
               <img
@@ -31,7 +31,7 @@
                 src="/icons/leftBlockIcons/wind.svg"
                 alt=""
               />
-              <h4 class="wind__speedText">Скорость ветра 4 м/с</h4>
+              <h4 class="wind__speedText">Скорость ветра 99 м/с</h4>
             </div>
             <div class="pressure_mm">
               <img
@@ -39,7 +39,7 @@
                 src="/icons/leftBlockIcons/pressure.svg"
                 alt=""
               />
-              <h4 class="pressure_mmText">Давление 758 мм рт. ст.</h4>
+              <h4 class="pressure_mmText">Давление 999 мм рт. ст.</h4>
             </div>
             <div class="humidity">
               <img
@@ -47,17 +47,18 @@
                 src="/icons/leftBlockIcons/humidity.svg"
                 alt=""
               />
-              <h4 class="humidityText">Влажность воздуха 86%</h4>
+              <h4 class="humidityText">Влажность воздуха 99%</h4>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="row">
-            <div class="upDownBlocks">
-              <div class="weather" id="weather">
-                <div class="timeAndSearch">
-                  <div class="time"></div>
-                  <div class="search">
+        <!-- <div class="col"> -->
+         
+            <div class="col">
+              <div class="row weather" id="weather">
+                <div class="row timeAndSearch" id="timeAndSearch">
+                  <div class="col-md-4"></div>
+                  <div class="col time"></div>
+                  <div class="col-md-4 search">
                     <input
                       class="search__input"
                       type="text"
@@ -65,13 +66,13 @@
                       id="search__input"
                       placeholder="Поиск"
                     />
-                    <img class="search__img" src="/icons/searc_icon.svg" alt="" />
+                    <!-- <img class="search__img" src="/icons/searc_icon.svg" alt="" /> -->
                   </div>
                 </div>
                 <div id="search__block" class="search__block">
-                  <div id="location" class="location">
-                    <div class="location__sity">Москва</div>
-                    <div class="icon">
+                  <div id="location" class="row location">
+                    <div class="col location__sity">Москва</div>
+                    <div class="col icon">
                       <img
                         class="weatherIcons"
                         id="weatherIcons"
@@ -80,9 +81,9 @@
                       />
                     </div>
                   </div>
-                  <div class="temperature__number">+15°</div>
-                  <div class="feels_like"></div>
-                  <div class="condition" id="condition">хуй</div>
+                  <div class="row justify-content-center temperature__number">+7°</div>
+                 
+                  <div class="row justify-content-center condition" id="condition">хуй</div>
                 </div>
                 <div id="selectCity" class="selectCity">
                 
@@ -91,65 +92,66 @@
                   </ul>
                 </div>
               </div>
-            </div>
-            <div class="row">
+            
+        
                
-              <div class="downBlockWeather" id="downBlockWeather">
-                <ul id="weatherForecast" class="weatherForecast">
-                  <li class="weatherForecast__list">
+              <div class="row downBlockWeather" id="downBlockWeather">
+                <ul id="weatherForecast" class="row weatherForecast">
+                  <li class="col weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="weatherForecast__list">
+                  <li class="col weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="weatherForecast__list">
+                  <li class="col weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="weatherForecast__list">
+                  <li class="col weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="weatherForecast__list">
+                  <li class="col weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="weatherForecast__list">
+                  <li class="col weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="weatherForecast__list">
+                  <li class="col weatherForecast__list">
                     <h4 class="dayOfTheWeek">Воскресенье</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" id="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Небольшой снег</h6>
-                  </li>
+                  </li> 
+                </ul> 
                   
+             </div>
             </div>
-          </div>
 
-        </div>
+     
       </div>
       
 
@@ -163,8 +165,8 @@
       </div>
     </div>
 
-    <div class="bgVideo">
-      <video
+    <div class="bgVideo" id="bgVideo" style="background: gray">
+       <video
         class="bgVideo__media"
         id="bgVideo__media"
         type="video"
