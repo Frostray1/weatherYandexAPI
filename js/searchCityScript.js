@@ -69,7 +69,7 @@ function searchCity(id) {
 
   document.getElementById("search__block").style.display = "block";
   document.getElementById("selectCity").style.display = "none";
-  document.getElementById("weatherForecast").style.display = "flex";
+  document.getElementById("weatherForecast").style.display = "inline-block";
   var myList = document.getElementById('list');
   myList.innerHTML = '';
 
