@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
       longitude = positions.coords.longitude;
       latitude = positions.coords.latitude;
       const city = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`
-      // const api = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,apparent_temperature&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto`;
+      const api = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=relativehumidity_2m,pressure_msl,apparent_temperature&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto`;
       fetch(city, {
       })
         .then((response) => {
