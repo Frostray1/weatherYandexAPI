@@ -21,7 +21,7 @@ search_text.addEventListener("keydown", function (e) {
     myList.innerHTML = '';
     document.getElementById("search__block").style.display = "none";
     document.getElementById("selectCity").style.display = "block";
-    document.getElementById("weatherForecast").style.display = "none";
+    document.getElementById("downBlockWeather").style.display = "none";
     
 
     const geoApi = `https://nominatim.openstreetmap.org/search?city=${search_text.value}&format=jsonv2`;
@@ -63,13 +63,14 @@ search_text.addEventListener("keydown", function (e) {
 
 search_button.addEventListener("click", function () {
   // searchCity();
+  alert("В разработке, работает по нажатию на enter")
 });
 
 function searchCity(id) {
 
   document.getElementById("search__block").style.display = "block";
   document.getElementById("selectCity").style.display = "none";
-  document.getElementById("weatherForecast").style.display = "inline-block";
+  document.getElementById("downBlockWeather").style.display = "block";
   var myList = document.getElementById('list');
   myList.innerHTML = '';
 

@@ -28,7 +28,7 @@
 }
 
 
-@media (max-width: 993px) OR (max-height: 840px) {
+@media (max-width: 993px) {
   .leftBlock{
     display: none;
   }
@@ -38,16 +38,22 @@
   white-space: nowrap;
    height: 200px;
   }
-  .downBlockWeather > .row > .col-3{
+  .downBlockWeather > .row > .weatherForecast__list{
     display: inline-block;
+    width: 25%;
     
   }
-  #weatherForecast{
-    li{
-      margin-left:1em;
+  
+  .icon {
+
+
+
+    img {
+      width: 180px;
+      height: 180px;
+
     }
   }
- 
   
   #timeAndSearch{
     margin:0;
@@ -56,12 +62,16 @@
     height: 120vh;
   }
   .search__img{
-    // margin: -2em 0em 0em 4em;
+    margin: -2em 0em 0em 4em;
   }
   
 }
 @media (max-width: 767px){
-  
+  #weatherForecast{
+    li{
+      margin-left:1em;
+    }
+  }
   .search__img{
     margin: 0.4em 0em 0em -2em;
   }
