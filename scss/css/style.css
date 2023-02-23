@@ -108,7 +108,7 @@
 
 #weatherForecast {
   padding: 0;
-  width: 100%;
+  margin: 0 auto;
 }
 #weatherForecast li {
   list-style: none;
@@ -126,7 +126,7 @@
   font-size: 20px;
 }
 #weatherForecast li h6 {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #weather {
@@ -227,17 +227,37 @@
   width: 100vw;
 }
 
-@media (max-width: 993px) {
+@media (max-width: 993px) or (max-height: 840px) {
   .leftBlock {
     display: none;
   }
-  #downBlockWeather {
-    display: none;
+  .downBlockWeather > .row {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 200px;
+  }
+  .downBlockWeather > .row > .col-3 {
+    display: inline-block;
+  }
+  #weatherForecast li {
+    margin-left: 1em;
   }
   #timeAndSearch {
     margin: 0;
   }
   .preloader__window {
     height: 120vh;
+  }
+}
+@media (max-width: 767px) {
+  .search__img {
+    margin: 0.4em 0em 0em -2em;
+  }
+}
+@media (max-height: 848px) {
+  .mainContainer {
+    padding-top: 1em;
+    margin-bottom: 1em;
   }
 }

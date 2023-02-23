@@ -15,10 +15,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
-    <div class="preloader__window">
+    <!-- <div class="preloader__window">
       <div class="preloader-5"></div>
       <h3 class="preloader__text">Завариваем чай</h3>
-    </div>
+    </div> -->
 
     <div class="mainContainer">
       <div class="container text-center">
@@ -66,12 +66,12 @@
                       id="search__input"
                       placeholder="Поиск"
                     />
-                    <!-- <img class="search__img" src="/icons/searc_icon.svg" alt="" /> -->
+                    <img class="search__img" src="/icons/searc_icon.svg" alt="" />
                   </div>
                 </div>
                 <div id="search__block" class="search__block">
                   <div id="location" class="row location">
-                    <div class="col location__sity"></div>
+                    <div class="col location__sity">None</div>
                     <div class="col icon">
                       <img
                         class="weatherIcons"
@@ -81,9 +81,9 @@
                       />
                     </div>
                   </div>
-                  <div class="row justify-content-center temperature__number"></div>
+                  <div class="row justify-content-center temperature__number">None</div>
                  
-                  <div class="row justify-content-center condition" id="condition"></div>
+                  <div class="row justify-content-center condition" id="condition">None</div>
                 </div>
                 <div id="selectCity" class="selectCity">
                 
@@ -95,51 +95,51 @@
             
         
                
-              <div class="row downBlockWeather" id="downBlockWeather">
+              <div class="row flex-nowrap downBlockWeather" id="downBlockWeather">
                 <ul id="weatherForecast" class="row weatherForecast">
-                  <li class="col weatherForecast__list">
+                  <li class="col-3 weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="col weatherForecast__list">
+                  <li class="col-3 weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="col weatherForecast__list">
+                  <li class="col-3 weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="col weatherForecast__list">
+                  <li class="col-3 weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="col weatherForecast__list">
+                  <li class="col-3 weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="col weatherForecast__list">
+                  <li class="col-3 weatherForecast__list">
                     <h4 class="dayOfTheWeek">понедельник</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
                     <h5 class="weatherForecast__temp" id="weatherForecast__temp">+7</h5>
                     <h6 class="weatherForecast__condition">Пасмурно</h6>
                   </li>
-                  <li class="col weatherForecast__list">
+                  <li class="col-3 weatherForecast__list">
                     <h4 class="dayOfTheWeek">Воскресенье</h4>
                     <p class="date"> 14 декабря</p>
                     <img class="weatherForecast__icon" id="weatherForecast__icon" src="/icons/animated/bkn_+ra_d.svg" alt="">
