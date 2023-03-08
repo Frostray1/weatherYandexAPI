@@ -55,14 +55,13 @@ search_text.addEventListener("keydown", function (e) {
         document.querySelector("#list").append($fragment);
 
       });
-      // document.getElementById('bgVideo').setAttribute("style", "height:200vh");
+
   }
 });
 
 
 
 search_button.addEventListener("click", function () {
-  // searchCity();
   alert("В разработке, работает по нажатию на enter")
 });
 
